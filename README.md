@@ -4,7 +4,7 @@ Backup or synchronize directories to S3.
 
 ## Using ToS3
 
-The following environment variables are honored configuring ToS3:
+The following environment variables are honored for configuring ToS3:
 
 -	`-e AWS_ACCESS_KEY_ID=...` (AWS ACCESS KEY )
 -	`-e AWS_SECRET_ACCESS_KEY=...` (AWS SECRET KEY)
