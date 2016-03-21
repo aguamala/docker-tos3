@@ -38,7 +38,7 @@ configuration to /lsyncd.conf
 
 Example:
 
-		$ docker run -d \
+    $ docker run -d \
         --name=tos3 \
         -e "AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
         -e "AWS_ACCESS_KEY_ID=XXXXXXXXXXXXX" \
@@ -54,7 +54,7 @@ configuration to /root/.s3cfg
 
 Example:
 
-		$ docker run -d \
+    $ docker run -d \
         --name=tos3 \
         -e "LSYNCD_SOURCE=/var/www/html" \
         -e "LSYNCD_TARGET=s3://test.bucket/html" \
