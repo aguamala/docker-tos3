@@ -20,9 +20,9 @@ Quickstart:
     $ docker run -d \
         --name=tos3 \
         -e "AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
-				-e "AWS_ACCESS_KEY_ID=XXXXXXXXXXXXX" \
-				-e "LSYNCD_SOURCE=/var/www/html" \
-				-e "LSYNCD_TARGET=s3://test.bucket/html" \
+        -e "AWS_ACCESS_KEY_ID=XXXXXXXXXXXXX" \
+        -e "LSYNCD_SOURCE=/var/www/html" \
+        -e "LSYNCD_TARGET=s3://test.bucket/html" \
         --volume=/etc/localtime:/etc/localtime \
         aguamala/tos3:latest
 
