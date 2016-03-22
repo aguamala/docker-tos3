@@ -6,8 +6,8 @@ Backup or synchronize directories to S3.
 
 The following environment variables are honored for configuring ToS3:
 
--	`-e AWS_ACCESS_KEY_ID=...` (AWS ACCESS KEY )
--	`-e AWS_SECRET_ACCESS_KEY=...` (AWS SECRET KEY)
+-	`-e S3CMD_ACCESS_KEY=...` (S3 ACCESS KEY )
+-	`-e S3CMD_SECRET_KEY=...` (S3 SECRET KEY)
 -	`-e S3CMD_BUCKET_LOCATION=...` (defaults to "US")
 -	`-e LSYNCD_SOURCE=...` (Source directory)
 -	`-e LSYNCD_TARGET=...` (S3 bucket target)
@@ -19,8 +19,8 @@ Quickstart:
 
     $ docker run -d \
         --name=tos3 \
-        -e "AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
-        -e "AWS_ACCESS_KEY_ID=XXXXXXXXXXXXX" \
+        -e "S3CMD_SECRET_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
+        -e "S3CMD_ACCESS_KEY=XXXXXXXXXXXXX" \
         -e "LSYNCD_SOURCE=/var/www/html" \
         -e "LSYNCD_TARGET=s3://test.bucket/html" \
         --volume=/etc/localtime:/etc/localtime \
@@ -40,8 +40,8 @@ Example:
 
     $ docker run -d \
         --name=tos3 \
-        -e "AWS_SECRET_ACCESS_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
-        -e "AWS_ACCESS_KEY_ID=XXXXXXXXXXXXX" \
+        -e "S3CMD_SECRET_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
+        -e "S3CMD_ACCESS_KEY=XXXXXXXXXXXXX" \
         --volume=lsyncd.conf:/lsyncd.conf \
         --volume=/etc/localtime:/etc/localtime \
         aguamala/tos3:latest

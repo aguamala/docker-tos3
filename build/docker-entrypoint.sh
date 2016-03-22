@@ -7,13 +7,13 @@ if [ "$1" = 'lsyncd' ]; then
     if [ ! -e /root/.s3cfg ]; then
           cat /s3cfg-sample > /root/.s3cfg
 
-          if [[ -z "$AWS_ACCESS_KEY_ID" ]] || [ -z "$AWS_SECRET_ACCESS_KEY" ]; then
-            echo >&2 'error: missing AWS_ACCESS_KEY_ID or AWS_SECRET_ACCESS_KEY environment variables'
+          if [[ -z "$S3CMD_ACCESS_KEY" ]] || [ -z "$S3CMD_SECRET_KEY" ]; then
+            echo >&2 'error: missing S3CMD_ACCESS_KEY or S3CMD_SECRET_KEY environment variables'
             exit 1
           fi
 
-          sed -i -e"s/access_key =/access_key = $AWS_ACCESS_KEY_ID/" /root/.s3cfg  && \
-          sed -i -e"s/secret_key =/secret_key = $AWS_SECRET_ACCESS_KEY/" /root/.s3cfg
+          sed -i -e"s/access_key =/access_key = $S3CMD_ACCESS_KEY/" /root/.s3cfg  && \
+          sed -i -e"s/secret_key =/secret_key = $S3CMD_SECRET_KEY/" /root/.s3cfg
 
           if [ -n "$S3CMD_BUCKET_LOCATION" ]; then
             sed -i -e"s/bucket_location = US/bucket_location = $S3CMD_BUCKET_LOCATION/" /root/.s3cfg
