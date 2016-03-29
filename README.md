@@ -1,6 +1,6 @@
 # ToS3
 
-Backup or synchronize directories to S3.
+Backup or synchronize directories to S3. Lsyncd + s3cmd
 
 ## Using ToS3
 
